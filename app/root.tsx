@@ -1,3 +1,4 @@
+import rootCss from "~/root.css";
 import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
 import {
@@ -10,6 +11,7 @@ import {
 } from "@remix-run/react";
 
 export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: rootCss },
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
@@ -23,7 +25,11 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <main>
+          <nav></nav>
+          <Outlet />
+          <p>some crap</p>
+        </main>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

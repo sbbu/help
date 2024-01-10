@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #272727;
+  }
+  
+body {
+  padding: 1rem;
+}
+
+:root {
+  --ln: 1px solid gainsboro;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  border: var(--ln);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: gainsboro;
+}
+
+main > * {
+  border: var(--ln);
+}
+
+main > nav {
+  height: 72px;
+  min-height: 72px;
+}
+
+
+main > footer {
+  height: 72px;
+  min-height: 72px;
+}
+
+main > .body {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  overflow: hidden;
+}
+
+main > .body > * {
+  grid-column: span 4;
+}
+
+main > .body > *:not(:last-child) {
+  border-right: var(--ln)
+}
+
+:root {
+  --col-pad: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--col-pad);
+}
+
+main > .body > .col {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+main > .body > .col > .colBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+main > .body > .col > .colTitle {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border-bottom: var(--ln);
+}
+
+main > .body > .col > .colBody > * {
+  height: 144px;
+  border: var(--ln);
+  border-radius: 0.5rem;
+}

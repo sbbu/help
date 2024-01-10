@@ -1,4 +1,5 @@
 import rootCss from "~/root.css";
+import stylesheet from "~/tailwind.css";
 import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
 import {
@@ -12,6 +13,7 @@ import {
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: rootCss },
+  { rel: "stylesheet", href: stylesheet },
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
@@ -28,7 +30,7 @@ export default function App() {
         <main>
           <nav></nav>
           <Outlet />
-          <p>some crap</p>
+          <p>footer text, social media links etc</p>
         </main>
         <ScrollRestoration />
         <Scripts />

@@ -10,66 +10,90 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <>
-      <div className="h-full w-full rounded-lg flex">
-        <div className="w-1/3 px-6 pt-4 border-t border-r">
-          <h1 className="text-sm ">LOOKING GOOD!</h1>
-          <div className="mt-3 flex flex-col gap-6">
-            <p>All clear! Your collection's media is good to go.</p>
-            <p>Happy with what you see? Hit 'CONTINUE' when you're ready.</p>
-            <p>
-              If you've made a mistake or just want to start over, simply hit
-              'RE-UPLOAD'.
-            </p>
+      <main>
+        <div></div>
+        <nav className="border rounded-t h-16 p-3 px-6 text-white">
+          <p>navbar stuff</p>
+        </nav>
+        <div className="grid overflow-hidden grid-cols-12 border-x">
+          <div className="col-span-4 p-6 border-r text-white">
+            <p>instructions text</p>
           </div>
-        </div>
-
-        <div className="flex flex-col w-2/3">
-          <div className="flex border-y">
-            <div className="w-1/2 border-r p-2">media</div>
-            <div className="w-1/2 p-2">metadata</div>
-          </div>
-          <div className="overflow-hidden flex">
-            <div className="flex flex-col overflow-y-scroll w-1/2">
-              <div className="colBody">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+          <div className="col-span-8 grid-cols-8 grid-rows-12 grid overflow-hidden">
+            <div className="col-span-8 text-white border-b flex min-h-16">
+              <div className="border-r w-1/2 flex items-center min-h-16">
+                <p>media</p>
+              </div>
+              <div className="flex-grow w-1/2 flex items-center min-h-16">
+                <p>metadata</p>
               </div>
             </div>
-            <div className="flex flex-col flex-grow overflow-y-scroll w-1/2">
-              <div className="colBody">stuff goes here</div>
+            <div className="col-span-4 grid grid-cols-2 row-span-11 lg:grid-cols-3 p-4 gap-4 overflow-y-scroll">
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+            </div>
+            <div className="overflow-y-scroll col-span-4 row-span-11 p-4 text-white">
+              <MetadataCard />
+              <MetadataCard />
+              <MetadataCard />
+              <MetadataCard />
+              <MetadataCard />
+              <MetadataCard />
+              <MetadataCard />
+              <MetadataCard />
+              <MetadataCard />
+              <MetadataCard />
+              <MetadataCard />
+              <MetadataCard />
+              <MetadataCard />
+              <MetadataCard />
             </div>
           </div>
         </div>
-      </div>
-      <footer className="flex border-t justify-end gap-8">
-        <button>back</button>
-        <button>continue</button>
-      </footer>
+        <footer className="border rounded-b h-16 flex text-white p-4 justify-end gap-4">
+          <p className="border rounded px-3">back</p>
+          <p className="border rounded px-3">continue</p>
+        </footer>
+        <p className="text-white">footer text, social media links etc</p>
+      </main>
     </>
   );
+}
+
+function MetadataCard() {
+  return <div className="rounded-lg border h-36 w-full mb-4" />;
+}
+
+function Card() {
+  return <div className="rounded-lg border aspect-square" />;
 }

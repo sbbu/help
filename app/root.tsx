@@ -28,9 +28,7 @@ export default function App() {
       </head>
       <body>
         <main>
-          <nav></nav>
           <Outlet />
-          <p>footer text, social media links etc</p>
         </main>
         <ScrollRestoration />
         <Scripts />
